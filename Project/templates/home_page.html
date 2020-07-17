@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% block title %}<title>Home Page</title>{% endblock %}
+</head>
+
+<style>
+input[type=text], select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 128px;
+  box-sizing: border-box;
+}
+
+textarea[type=text], select{
+    width: 100%;
+    height: 66px;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 12px;
+    box-sizing: border-box;
+    resize: none;
+}
+
+input[type=submit] {
+  width: 100%;
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 12px 0;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+div {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+}
+
+#shadow { position: absolute; border-width: 0px; padding: 0px; visibility: hidden; }
+</style>
+
+<body>
+<script>
+var $shadow = document.getElementById("shadow")
+function textAreaAdjust(el) {
+    shadow.value = el.value;
+    el.style.height = "41px";
+    el.style.height = shadow.scrollHeight;
+}
+</script>
+    <div class="container-fliud"><h1>Home Page</h1>
+        <hr><br>
+        <form action="/result" method="POST">
+            <label for="abstract">Text1</label><br>
+            <textarea
+                    type="text"
+                    id="text1"
+                    name="text1"
+                    placeholder="text.."></textarea><br>
+            <label for="references">Text2</label><br>
+            <textarea
+                    type="text"
+                    id="text2"
+                    name="text2"
+                    placeholder="text.."></textarea><br>
+            <!--<label for="country">Country</label>
+            <select id="country" name="country">
+                <option value="australia">Australia</option>
+                <option value="canada">Canada</option>
+                <option value="usa">USA</option>
+            </select>-->
+
+            <input type="submit" value="Submit">
+            <textarea id="shadow"></textarea>
+        </form>
+    </div>
+
+</body>
+</html>
